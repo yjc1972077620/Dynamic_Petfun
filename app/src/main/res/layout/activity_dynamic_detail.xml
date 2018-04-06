@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.petfun.dynamicdetail.DynamicDetailActivity">
+    <android.support.v7.widget.Toolbar
+        android:paddingTop="@dimen/toolBarPaddingTop"
+        android:fitsSystemWindows="true"
+        android:background="#ff8102"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
+        <ImageView
+            android:id="@+id/back"
+            android:src="@drawable/back"
+            android:layout_gravity="left"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:text="帖子详情"
+            android:id="@+id/detailtitle"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10">
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/comment_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ListView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:dividerHeight="3dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/comment_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </ListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="#d1c2c2"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            >
+            <EditText
+                android:id="@+id/comment_edit"
+                android:background="@null"
+                android:minHeight="45dp"
+                android:hint="留下你的评论吧！"
+                android:textSize="15sp"
+                android:layout_width="0dp"
+                android:layout_weight="7"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/submit_comment"
+                android:background="#00000000"
+                android:text="发表"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="45dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
